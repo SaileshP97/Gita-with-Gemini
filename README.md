@@ -22,8 +22,8 @@ Implemented a user-friendly web interface using Gradio for seamless interaction 
 
 ### Screenshots:
 
-![Screenshot 1](path/to/screenshot1.png)
-*Caption for screenshot 1*
+![Screenshot 1](images/with_rag.png)
+*With RAG*
 
-![Screenshot 2](path/to/screenshot2.png)
-*Caption for screenshot 2*
+![Screenshot 2](images/without_rag.png)
+*Without RAG*
