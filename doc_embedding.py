@@ -25,9 +25,13 @@ def get_embedding(text: str) -> list[float]:
 
 def get_mongo_client():
     """Establish connection to the MongoDB."""
-    mongo_uri = f"""mongodb+srv://{os.environ['USERNAME']}:
-    {os.environ['Password']}@vec-embedding.hppejw9.mongodb.net/
-    ?retryWrites=true&w=majority&appName=vec-embedding"""
+
+    mongo_uri = (
+        f"mongodb+srv://{os.environ['USERNAME']}:{os.environ['Password']}"
+        "@vec-embedding.hppejw9.mongodb.net/"
+    )
+
+    print(mongo_uri)
 
     try:
         client = pymongo.MongoClient(mongo_uri)

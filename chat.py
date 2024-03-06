@@ -50,9 +50,10 @@ def get_search_result(query, collection):
 
 def generate_text(input_text, history):
     source_information = get_search_result(input_text, collection)
-    combined_information = f"""Query: {input_text}\nContinue to answer
-    the query by using the Search Results:\n{source_information}."""
-
+    combined_information = (
+        f"Query: {input_text}\nContinue to answer "
+        f"the query by using the Search Results:\n{source_information}."
+    )
     response = model.generate_content(combined_information)
 
     return response.text
@@ -66,5 +67,5 @@ if __name__ == "__main__":
     genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
     model = genai.GenerativeModel("gemini-pro")
 
-    iface = gr.ChatInterface(fn=generate_text, title="Chat with Assistant")
+    iface = gr.ChatInterface(fn=generate_text, title="Chat with Assistant without RAG")
     iface.launch(share=False, server_port=2020)
